@@ -1,0 +1,22 @@
+# To specify the time, in seconds, for a client to establish an Oracle Net connection to the database instance.
+# Without this parameter, a client connection request to the database server may block for the default TCP
+# connect timeout duration (60 seconds) when the database server host system is unreachable.
+sqlnet.outbound_connect_timeout=5
+
+# You can set this parameter on the client-side to specify the time, in seconds, for a client to wait for response
+# data from the database server after connection establishment. Without this parameter, the client may wait a
+# long period of time for a response from a database server saturated with requests.
+sqlnet.recv_timeout=5
+
+# To specify the time, in seconds, for a client to establish a TCP connection to the database server. If a TCP
+# connection to the database host is not established in the time specified, the connect attempt is terminated.
+# The client receives an ORA-12170: TNS:Connect timeout occurred error. Without this parameter, a client connection
+# request to the database server can block for the default duration of the TCP connect timeout (approximately 8
+# minutes on Linux) when the database server host system is unreachable.
+tcp.connect_timeout=10
+
+# To specify a time interval, in minutes, to send a probe to verify that client/server connections are active.
+# Setting a value greater than 0 ensures that connections are not left open indefinitely, due to an abnormal client
+# termination. If the probe finds a terminated connection, or a connection that is no longer in use, it returns an
+# error, causing the server process to exit. This parameter is primarily intended for the database servers.
+#sqlnet.expire_time=1
